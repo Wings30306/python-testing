@@ -33,10 +33,11 @@ class TestStudent(unittest.TestCase):
         self.assertEqual(self.student.email, "john.doe@hogwarts.com")
 
     def test_extension(self):
+        old_end_date = self.student.end_date
         self.student.extension(30)
         self.assertEqual(
             self.student.end_date,
-            self.student._start_date + timedelta(days=395)
+            old_end_date + timedelta(days=30)
         )
 
 

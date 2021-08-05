@@ -1,4 +1,5 @@
 from datetime import date, timedelta
+from dateutil.relativedelta import relativedelta
 
 
 class Student:
@@ -8,8 +9,7 @@ class Student:
         self._first_name = first_name
         self._last_name = last_name
         self._start_date = date.today()
-        self.end_date = date.today() + timedelta(days=365)
-        # improve to account for leapyears
+        self.end_date = date.today() + relativedelta(years=1)
         self.naughty_list = False
 
     @property
